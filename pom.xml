@@ -9,12 +9,12 @@
     <version>1.0.0-SNAPSHOT</version>
 
     <organization>
-        <name>Example Company</name>
-        <url>http://www.example.com/</url>
+        <name>Bisnode</name>
+        <url>https://www.bisnode.com</url>
     </organization>
 
     <name>tap-for-bamboo</name>
-    <description>This is the com.bisnode.bamboo:tap-for-bamboo plugin for Atlassian Bamboo.</description>
+    <description>TAP (Test Anything Protocol) plugin for Bamboo</description>
     <packaging>atlassian-plugin</packaging>
 
     <properties>
@@ -23,7 +23,6 @@
         <amps.version>8.0.2</amps.version>
         <plugin.testrunner.version>2.0.1</plugin.testrunner.version>
         <atlassian.spring.scanner.version>1.2.13</atlassian.spring.scanner.version>
-        <!-- This property ensures consistency between the key in atlassian-plugin.xml and the OSGi bundle's key. -->
         <atlassian.plugin.key>${project.groupId}.${project.artifactId}</atlassian.plugin.key>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
