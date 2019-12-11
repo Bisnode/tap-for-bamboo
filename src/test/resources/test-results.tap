@@ -1,0 +1,9 @@
+1..8
+ok 1 No warnings have been logged while transforming the bisconf
+ok 2 The name of the first container is the service name plus default
+ok 3 Using facilities.sidecar.opa creates a OPA sidecar container object
+ok 4 Using facilities.sidecar.opa exposes OPA on port 8181
+ok 5 Using facilities.sidecar.opa adds a sane configuration of base arguments
+ok 6 Using facilities.sidecar.opa adds labels to the opa configuration
+ok 7 Providing containers.default.comand in bisconf.yaml carries over to the deployment object
+ok 8 Providing containers.default.args in bisconf.yaml carries over to the deployment object

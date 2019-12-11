@@ -1,0 +1,28 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/tap.png</param>
+        <param name="plugin-logo">images/tap.png</param>
+    </plugin-info>
+
+    <resource type="i18n" name="i18n" location="tap-for-bamboo"/>
+    
+    <web-resource key="tap-for-bamboo-resources" name="tap-for-bamboo Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        <resource type="download" name="tap-for-bamboo.css" location="/css/tap-for-bamboo.css"/>
+        <resource type="download" name="tap-for-bamboo.js" location="/js/tap-for-bamboo.js"/>
+        <resource type="download" name="images/" location="/images"/>
+        <context>tap-for-bamboo</context>
+    </web-resource>
+
+    <taskType key="tap-task" name="TAP Test Parser" class="com.bisnode.bamboo.plugins.TapTask">
+        <description>Parses and displays test results from TAP streams</description>
+        <category name="test" />
+        <configuration class="com.bisnode.bamboo.plugins.TapConfigurator"/>
+        <resource type="freemarker" name="edit" location="tap-for-bamboo-config.ftl"/>
+        <help link="task.opa.help.link" title="task.opa.help.title" />
+    </taskType>
+    
+</atlassian-plugin>

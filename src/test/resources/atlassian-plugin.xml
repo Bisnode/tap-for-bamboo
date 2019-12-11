@@ -1,0 +1,18 @@
+<atlassian-plugin key="${project.groupId}.${project.artifactId}-tests" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+    </plugin-info>
+
+    <resource type="i18n" name="i18n" location="tap-for-bamboo"/>
+
+    <taskType key="tap-task" name="TAP Test Parser" class="com.bisnode.bamboo.plugins.TapTask">
+        <description>Parses and displays test results from TAP streams</description>
+        <category name="test" />
+        <configuration class="com.bisnode.bamboo.plugins.TapConfigurator"/>
+        <resource type="freemarker" name="edit" location="editTapTask.ftl"/>
+        <help link="task.opa.help.link" title="task.opa.help.title" />
+    </taskType>
+    
+</atlassian-plugin>
