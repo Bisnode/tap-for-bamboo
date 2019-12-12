@@ -1,0 +1,14 @@
+<atlassian-plugin-marketing>
+    <!-- https://developer.atlassian.com/platform/marketplace/declaring-marketing-assets-for-server-apps/ -->
+    <compatibility>
+        <product name="bamboo" min="6.3" max="7.0"/>
+    </compatibility>
+    <logo image="images/tap.png"/>
+    <highlights>
+        <highlight image="images/screen1.png" cropped="images/screen1.png"/>
+    </highlights>
+    <screenshots>
+        <screenshot image="images/screen1.png"/>
+        <screenshot image="images/screen2.png"/>
+    </screenshots>
+</atlassian-plugin-marketing>
