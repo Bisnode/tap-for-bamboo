@@ -13,6 +13,12 @@
         <url>https://www.bisnode.com</url>
     </organization>
 
+    <scm>
+        <connection>scm:git:git://github.com:Bisnode/tap-for-bamboo.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:Bisnode/tap-for-bamboo.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
     <name>tap-for-bamboo</name>
     <description>TAP (Test Anything Protocol) plugin for Bamboo</description>
     <packaging>atlassian-plugin</packaging>
@@ -112,7 +118,7 @@
 
                         <!-- Add package to export here -->
                         <Export-Package>
-                            com.bisnode.bamboo.api,
+                            com.bisnode.bamboo.plugins,
                         </Export-Package>
 
                         <!-- Add package import here -->
