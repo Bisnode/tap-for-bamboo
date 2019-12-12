@@ -10,7 +10,7 @@ it hasn't been maintained for a few years we needed something that would work wi
 
 Drop the plugin jar in your Bamboo plugins directory, or install it through the Bamboo admin web UI.
 
-![Bamboo installation screenshot](src/main/resources/images/screen2.png?raw=true "Installation")
+<img alt="Bamboo installation screenshot" src="src/main/resources/images/screen2.png" width="400">
 
 ## Usage
 
