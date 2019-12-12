@@ -8,6 +8,8 @@ import com.atlassian.bamboo.results.tests.TestResults;
 import com.atlassian.bamboo.resultsummary.tests.TestCaseResultErrorImpl;
 import com.atlassian.bamboo.resultsummary.tests.TestState;
 import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.tap4j.consumer.TapConsumerFactory;
 import org.tap4j.model.Directive;
 import org.tap4j.model.TestResult;
@@ -33,6 +35,8 @@ public class TapReports {
 
     public static class Provider implements TestReportProvider {
 
+        private static final Logger log = LoggerFactory.getLogger(Provider.class);
+
         private final File logFile;
 
         public Provider(File logFile) {
@@ -45,7 +49,10 @@ public class TapReports {
             Map<TestState, List<TestResults>> endResults = Stream.of(SKIPPED, FAILED, SUCCESS)
                     .collect(Collectors.toMap(Function.identity(), v -> new ArrayList<>()));
 
-            for (TestResult testResult : TapConsumerFactory.makeTap13Consumer().load(logFile).getTestResults()) {
+            List<TestResult> testResults = TapConsumerFactory.makeTap13Consumer().load(logFile).getTestResults();
+            log.debug("Preparing to process {} test results", testResults.size());
+
+            for (TestResult testResult : testResults) {
                 TestResults bambooResult =
                         new TestResults(testResult.getDescription(), testResult.getDescription(), (Long) null);
 
@@ -75,6 +82,8 @@ public class TapReports {
                         val.add(bambooResult);
                         return val;
                     });
+                } else {
+                    log.warn("Unknown state, TAP result neither OK, NOT_OK nor SKIPPED");
                 }
             }
 
