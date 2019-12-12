@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.bisnode.bamboo</groupId>
     <artifactId>tap-for-bamboo</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <organization>
         <name>Bisnode</name>
@@ -36,7 +36,6 @@
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>org.tap4j</groupId>
             <artifactId>tap4j</artifactId>
