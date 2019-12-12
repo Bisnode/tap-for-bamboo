@@ -111,6 +111,11 @@ public class TapReports {
             return Collections.unmodifiableSet(supportedExtensions);
         }
 
+        @Override
+        public boolean canIgnoreResultsFrom(File file) {
+            return supportedExtensions.stream().noneMatch(supported -> file.getName().endsWith(supported));
+        }
+
     }
 
 }
