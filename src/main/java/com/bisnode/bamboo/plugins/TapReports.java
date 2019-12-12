@@ -18,6 +18,8 @@ import org.tap4j.util.StatusValues;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -97,6 +99,8 @@ public class TapReports {
 
     public static class Collector implements TestReportCollector {
 
+        private static final Set<String> supportedExtensions = new HashSet<>(Arrays.asList("tap"));
+
         @Override
         public TestCollectionResult collect(File file) {
             return new Provider(file).getTestCollectionResult();
@@ -104,7 +108,7 @@ public class TapReports {
 
         @Override
         public Set<String> getSupportedFileExtensions() {
-            return new HashSet<>(0);
+            return Collections.unmodifiableSet(supportedExtensions);
         }
 
     }
