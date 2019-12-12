@@ -22,7 +22,6 @@
         <category name="test" />
         <configuration class="com.bisnode.bamboo.plugins.TapConfigurator"/>
         <resource type="freemarker" name="edit" location="tap-for-bamboo-config.ftl"/>
-        <help link="task.opa.help.link" title="task.opa.help.title" />
+        <resource type="download" name="icon" location="images/tap.png"/>
     </taskType>
-    
 </atlassian-plugin>
