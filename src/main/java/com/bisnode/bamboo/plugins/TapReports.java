@@ -54,9 +54,9 @@ public class TapReports {
             List<TestResult> testResults = TapConsumerFactory.makeTap13Consumer().load(logFile).getTestResults();
             log.debug("Preparing to process {} test results", testResults.size());
 
+            String fileNameNoExt = logFile.getName().replaceFirst("[.][^.]+$", "");
             for (TestResult testResult : testResults) {
-                TestResults bambooResult =
-                        new TestResults(testResult.getDescription(), testResult.getDescription(), (Long) null);
+                TestResults bambooResult = new TestResults(fileNameNoExt, testResult.getDescription(), (Long) null);
 
                 boolean skip = Optional.ofNullable(testResult.getDirective())
                         .map(Directive::getDirectiveValue)
