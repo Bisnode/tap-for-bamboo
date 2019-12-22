@@ -8,7 +8,7 @@ it hasn't been maintained for a few years we needed something that would work wi
 
 ## Installation
 
-Drop the [plugin jar](https://github.com/Bisnode/tap-for-bamboo/releases/download/v1.0.0/tap-for-bamboo-1.0.0.jar) in 
+Drop the [plugin jar](https://github.com/Bisnode/tap-for-bamboo/releases/download/v1.1.0/tap-for-bamboo-1.1.0.jar) in 
 your Bamboo plugins directory, or install it through the Bamboo admin web UI.
 
 <img alt="Bamboo installation screenshot" src="src/main/resources/images/screen2.png" width="400">
